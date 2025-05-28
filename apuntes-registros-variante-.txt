@@ -2,4 +2,65 @@ REGISTROS:
     
 
     Variantes:
-        
+        Los valores son de distinta forma, tienen una sola parte.
+        Se define indicando los casos de variación, es decir, los diferentes valores que toma este tipo.
+        Se usan palabras claves:
+            variant para indicar que es una variante.
+            case para indicar cada uno de los casos de la variante.
+            También tiene su contrato 
+
+    Sintaxis:
+        type NombreDeVariante is variant {
+            /**** contrato *****/
+            case varianteUno{}
+            case varianteDos{}
+            case variantetres{}
+            case varianteCuatro{}
+            .
+            .
+            .
+            case varianteInfinita{}
+        }
+
+    Ejemplo:
+
+        type Palo is variant {
+            /*Contrato*/
+            case Espada{}
+            case Basto{}
+            case copa{}
+            caso Oro{}
+        }
+
+    Cada caso que definimos es su propio constructor, se conocen como tipos enumerativos.
+
+    Ejercicio:
+    Definir una función siguientePalo_ que tome un palo y describa al palo siguiente al dado en el orden alfabetico.
+
+    function siguientePalo_(palo){
+        /*
+            Proposito: Describe el palo siguiente a **palo**
+            Tipo: Palo.
+            Precondición: Ninguna.
+            Parametro: **palo** Tipo: Palo: indica un palo de cartas españolas.
+        */
+
+        return(
+                choose Bastos when (palo == Oros)
+                       Copa when (palo == Bastos)
+                       Espada when (palo == Copa)
+                       Oros otherWise
+        )
+    }
+
+    Extra sobre registros:
+
+        Se puede construir un registro basandose en otro registro dado.
+        Para modificar un un ragistro se puede utilizar el constructor de la siguiente manera:
+
+        Carta( elementoAModificar | campoQueQuieroModificar <- ElValorNuevo )
+
+        function la_SinLasRojas(celda){
+
+            return(Celda( celda | cantidadDeRojas <- 0))
+        }

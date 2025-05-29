@@ -108,4 +108,47 @@ function esFigura_(carta){
     */
     return(número(carta) >= 10 && número(carta) <= 12)
 }
+//f
+function esDeOro_(carta){
+    /*
+        Proposito: Indica si la carta **carta** es de oro.
+        Parametro: **carta**: Tipo: Carta.
+        Precondición: Ninguna.
+        Tipo: Booleanos
+    */
+
+    return(palo(carta) == Oro)
+}
+
+//g
+function tieneUnNúmeroMásGrande_Que_(cartaUno, cartaDos){
+    /*
+        Proposito: Indica si el número de la carta **cartaUno** es mayor que el número de la carta **cartaDos**.
+        Parametro: **cartaUno** y **cartaDos**: Tipo: Carta.
+        Precondición: Ninguna.
+        Tipo: Booleano
+    */
+
+    return(número(cartaUno) > número(cartaDos))
+}
+
+
+//h
+function sonDelMismoPalo_Y_(cartaUno, cartaDos){
+    /*
+        Proposito: Indica si **cartaUno** y **cartaDos** son del mismo palo.
+        Parametro: **cartaUno** y **cartaDos** Tipo: Carta.
+        Precondición: Ninguna.
+        Tipo: Booleano
+    */
+
+    return(palo(cartaUno) == palo(cartaDos))
+}
+
+//i
+
+function valorParaEnvidoDe_(carta){
+    
+}
+
 

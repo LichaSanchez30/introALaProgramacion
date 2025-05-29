@@ -1,2 +1,18 @@
 Listas:
+    Las listas tienen elementos.
+    Que cosas podemos saber de las listas:
+     -Primer elemento de la lista.
+     -La suma de todos los elementos.
+     -El elemento más grande de la lista.
+     -La cantidad de elementos de la lista.
+     -El elemento más grande de la lista.
+     -El elemento más chico de la lista.
+
+    Las listas entienden cierta cantidad de preguntas.
+    Estas operaciones se expresan mediante expresiones.
+
+    Una lista es un nuevo dato con estructura y esta compuesta por otros datos.
+    La cantidad de datos de una lista puede variar, puede no tener datos y se una lista vacia [] o tener n cantidad de datos
+    La lista esta formada por un cantidad variada de elementos y también puedo realizar operaciones que solo se pueden ejecutar en las listas.
+
     

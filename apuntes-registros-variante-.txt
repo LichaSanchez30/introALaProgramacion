@@ -1,6 +1,5 @@
 REGISTROS:
-    
-
+    La cantidad de partes que tiene un registro son fijas, una vez que se declara el registro no puede sumarse más campos, estos campos pueden tenes tipos diferentes.
     Variantes:
         Los valores son de distinta forma, tienen una sola parte.
         Se define indicando los casos de variación, es decir, los diferentes valores que toma este tipo.

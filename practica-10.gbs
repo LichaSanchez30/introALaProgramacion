@@ -1,0 +1,111 @@
+/*
+    EJERCICIO N°3
+
+    3. Jugamos con cartas.
+    
+    Declare el tipo variante Palo y el tipo registro Carta y escriba las siguientes funciones. 
+    No se olvide de ir probando en Gobstones cada función que realiza para saber sí el resultado es correcto.
+
+    a. anchoDeEspadas que describe la carta 1 de Espadas. 
+
+    b. anchoDeBastos que describe la carta 1 de Bastos.
+
+    c. laCarta_de_ que dado un número y un palo que describe la carta con dicho número y dicho palo.
+
+    d. esUnAncho_queindica si la carta dada es un 1.
+
+    e. esFigura_ que dada una carta, indica si la misma es una figura (las figuras son los 10s, los 11s y los 12s). 
+
+    f. esDeOro_ que indica si la carta dada es de Oros. 
+
+    g. tieneUnNúmeroMásGrande_Que_ que dadas dos cartas indica si la primera carta tiene un número másgrande que la segunda. 
+
+    h. sonDelMismoPalo_Y_quedadas doscartas, indica si estas tienen el mismo palo. 
+
+    i. valorParaEnvidoDe_ que describa el número que aporta la carta dada en el canto del envido. El número se corresponde al número de la carta, si la misma no es figura, y cero, si fuera figura. Atención: Sí ya sabe jugar al truco, tenga en cuenta que se está preguntando el valor que aportaría una única carta, no una jugada de multiples cartas. 
+
+    j. mayorValorEntre_Y_ que describe el valor más grande entre dos cartas, según lo que aporta cada una para el envido. Por ejemplo, si las cartas son un 7 y un 12, describe 7, pues el 12 no aporta nada para el envido. 
+
+    k. sumaParaElEnvidoCon_Y_ que dadas doscartas, describe el número que tienen las mismas para el envido. El envido se calcula como la suma los valores del envido de cada carta más 20, si las cartas son del mismo palo, o como el mayor valor entre ellas, cuando son de distinto palo. 
+
+    l. sonMejores_Y_Que_Y_ que dadas 4 cartas, donde las dos primeras son las cartas del primer jugador para cantar envido, y las segundas dos las del segundo jugador, indica si el envido del primer jugador es más grande que el envido del segundo jugador.
+
+*/
+
+type Palo is variant{
+    /*
+        Proposito: Modela los palos de las cartas españolas.
+    */
+
+    case Basto{}
+    case Copa{}
+    case Espadas{}
+    case Oro{}
+}
+
+
+type Carta is record{
+    /*
+        Proposito: Modelar cartas españolas.
+        Inv. Rep.: El número esta entre el 1 y el 12
+    */
+    field palo // Tipo: Palo
+    field número // Tipo: Número
+}
+
+//c
+function laCarta_de_(palo, número){
+    /*
+        Proposito: Describe una carta de palo **palo**, número **número**.
+        Parametros: **palo**: Tipo: Palo.
+                    **número**: Tipo: Número.
+        Precondición: Ninguna.
+        Tipo: Carta.
+    */
+
+    return(Carta(   palo <- palo,
+                    número <- número)
+            )
+}
+//a
+function anchoDeEspadas(){
+    /*
+        Proposito: Describe la carta ancho de espada.
+        Precondición: Ninguna.
+        Tipo: Carta.
+    */
+
+    return(laCarta_de_(Espadas, 1))
+}
+//b
+function anchoDeBastos(){
+    /*
+        Proposito: Describe la carta ancho de basto.
+        Precondición: Ninguna.
+        Tipo: Carta.
+    */
+    
+    return(laCarta_de_(Basto, 1))
+}
+//d
+function esUnAncho_(carta){
+    /*
+        Proposito: Indica si la carta es un 1.
+        Precondición: Ningua.
+        Tipo: Booleano.
+    */
+
+    return(número(carta) == 1)
+}
+
+//e
+function esFigura_(carta){
+    /*
+        Proposito: Indica si la carta **carta** es una figura.
+        Parametro: **carta**: Tipo: Carta.
+        Tipo: Booleano.
+        Precondición: Ninguna.
+    */
+    return(número(carta) >= 10 && número(carta) <= 12)
+}
+
